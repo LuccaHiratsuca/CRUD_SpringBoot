@@ -33,7 +33,13 @@ public class ProductService {
         } else {
             productRepository.save(product);
             feedbackProduct.setMessage("Product created successfully");
-            return new ResponseEntity<FeedbackProductModel>(feedbackProduct, HttpStatus.CREATED);
+            // return new ResponseEntity<FeedbackProductModel>(feedbackProduct, HttpStatus.CREATED);
+            // return new ResponseEntity<ProductModel>(product, HttpStatus.CREATED);
+           return ResponseEntity.status(HttpStatus.CREATED).body(new Object[]{feedbackProduct, product});
+
+
+
+            
         }
     }
 }

@@ -15,6 +15,4 @@ public class ProductModel {
     private String name;
     private String description;
 
-
-    
 }
