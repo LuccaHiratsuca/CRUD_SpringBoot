@@ -22,8 +22,8 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    // Create a product
-    public ResponseEntity<?> createProduct(ProductModel product){
+    // Create a product or update a product
+    public ResponseEntity<?> createUpdate(ProductModel product){
         if (product.getName().equals("")){
             feedbackProduct.setMessage("The name of the product is required");
             return new ResponseEntity<FeedbackProductModel>(feedbackProduct, HttpStatus.BAD_REQUEST);
@@ -31,15 +31,15 @@ public class ProductService {
             feedbackProduct.setMessage("The description of the product is required");
             return new ResponseEntity<FeedbackProductModel>(feedbackProduct, HttpStatus.BAD_REQUEST);
         } else {
-            productRepository.save(product);
-            feedbackProduct.setMessage("Product created successfully");
-            // return new ResponseEntity<FeedbackProductModel>(feedbackProduct, HttpStatus.CREATED);
-            // return new ResponseEntity<ProductModel>(product, HttpStatus.CREATED);
-           return ResponseEntity.status(HttpStatus.CREATED).body(new Object[]{feedbackProduct, product});
-
-
-
-            
+            if (product.getId() == null){
+                productRepository.save(product);
+                feedbackProduct.setMessage("Product created successfully");
+                return ResponseEntity.status(HttpStatus.CREATED).body(new Object[]{product, feedbackProduct});
+            } else {
+                productRepository.save(product);
+                feedbackProduct.setMessage("Product updated successfully");
+                return ResponseEntity.status(HttpStatus.OK).body(new Object[]{product, feedbackProduct});
+            }
         }
     }
 }
