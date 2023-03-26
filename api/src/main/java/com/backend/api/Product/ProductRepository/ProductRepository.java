@@ -1,8 +1,10 @@
 package com.backend.api.Product.ProductRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
 import com.backend.api.Product.ProductModel.ProductModel;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProductRepository extends JpaRepository<ProductModel, Long> {
+
+@Repository
+public interface ProductRepository extends CrudRepository<ProductModel, Long> {
     
 }
-
