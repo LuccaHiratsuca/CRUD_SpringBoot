@@ -1,10 +1,12 @@
 package com.backend.api.Product.ProductModel;
 import org.springframework.stereotype.Component;
 import lombok.Getter;
+import lombok.Setter;
 
 @Component
 @Getter
-public class TestProductModel {
+@Setter
+public class FeedbackProductModel {
     private String message;
     
 }
