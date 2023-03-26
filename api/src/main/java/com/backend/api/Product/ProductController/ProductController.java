@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.backend.api.Product.ProductService.ProductService;
 import com.backend.api.Product.ProductModel.ProductModel;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.http.ResponseEntity;
 
@@ -28,7 +29,13 @@ public class ProductController {
     // Route to create a product
     @PostMapping("/newProduct")
     public ResponseEntity<?> createProduct(@RequestBody ProductModel product) {
-        return productService.createProduct(product);
+        return productService.createUpdate(product);
+    }
+
+    // Route to update a product
+    @PutMapping("/updateProduct")
+    public ResponseEntity<?> updateProduct(@RequestBody ProductModel product) {
+        return productService.createUpdate(product);
     }
     
 }
