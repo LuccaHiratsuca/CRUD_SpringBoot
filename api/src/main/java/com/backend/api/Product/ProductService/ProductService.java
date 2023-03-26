@@ -42,4 +42,16 @@ public class ProductService {
             }
         }
     }
+
+    // Remove a product
+    public ResponseEntity<FeedbackProductModel> removeProduct(Long id){
+        if (productRepository.findById(id).isPresent()){
+            productRepository.deleteById(id);
+            feedbackProduct.setMessage("Product removed successfully");
+            return ResponseEntity.status(HttpStatus.OK).body(feedbackProduct);
+        } else {
+            feedbackProduct.setMessage("Product not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(feedbackProduct);
+        }
+    }
 }
