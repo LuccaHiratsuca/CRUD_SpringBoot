@@ -68,9 +68,12 @@ Para realizar testes foi utilizado o [vitest](!https://vitest.dev/)
     import '@testing-library/jest-dom/extend-expect'
     ```
 
-5. Em `vite.config.ts` adicionar "test" e arrumar import "from 'vitest/config'"
+5. Em `vite.config.ts` adicionar "test", arrumar import "from 'vitest/config'" e não esquecer as referências.
 
     ```
+    /// <reference types="vitest" />
+    /// <reference types="vite/client" />
+
     import { defineConfig } from 'vitest/config';
     ...
     export default defineCongi({
