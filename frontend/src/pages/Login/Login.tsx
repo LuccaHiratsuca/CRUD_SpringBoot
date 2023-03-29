@@ -1,4 +1,4 @@
-import styles from './Login.module.css';
+import styles from "./Login.module.css";
 
 interface ILogin{
     email: string;
