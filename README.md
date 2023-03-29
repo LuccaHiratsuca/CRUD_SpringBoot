@@ -20,17 +20,18 @@ Projeto desenvolvido com backend em Java SpringBoot e frontend em React Ts
 
 `util`: Funções utilitárias como formatCurrency, formatPhone, convertTimezone, parsePhone, etc. (Javascript puro)
 
+`test`: Onde fica o setup para os testes
+
 ### CSS - Module
 [StackOverFlow](https://stackoverflow.com/questions/41336858/how-to-import-css-modules-with-typescript-react-and-webpack)
 
 Para importar o CSS como module
-1. Criar arquivo `Globals.d.ts`
-2. Adicionar no arquivo:
+1. Adicionar no arquivo `index.d.ts`:
     ```
     declare module "*.module.css";
     declare module "*.module.scss";
     ```
-3. Em `vite.config.ts`, adicionar:
+2. Em `vite.config.ts`, adicionar:
     ```
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
     ```
@@ -50,11 +51,25 @@ Para realizar testes foi utilizado o [vitest](!https://vitest.dev/)
 - @testing-library/react
 - @testing-library/jest-dom
 - @testing-library/react-hooks
-- @testing-library/user-event
+- @testing-library/user-event 
+- jest-without-globals
 
     Exemplo:
     ```
     yarn add @testing-library/user-event
     ```
-
+4. Em `vite.config.ts` adicionar "test" e arrumar import "from 'vitest/config'"
+    ```
+    import { defineConfig } from 'vitest/config';
+    ...
+    export default defineCongi({
+    ...
+    test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/test/setup.ts",
+    css: true,
+    }
+    })
+    ```
 
