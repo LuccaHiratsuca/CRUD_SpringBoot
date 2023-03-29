@@ -58,18 +58,29 @@ Para realizar testes foi utilizado o [vitest](!https://vitest.dev/)
     ```
     yarn add @testing-library/user-event
     ```
-4. Em `vite.config.ts` adicionar "test" e arrumar import "from 'vitest/config'"
+
+4. Em `./src/` criar uma pasta chamada `tests` e dentro dessa, um arquivo denominado `setup.ts`, dentro dele, adicionar:
+
+    Esse arquivo será responsável por gerenciar os testes
+
+    ```
+    import "@testing-library/jest-dom";
+    import '@testing-library/jest-dom/extend-expect'
+    ```
+
+5. Em `vite.config.ts` adicionar "test" e arrumar import "from 'vitest/config'"
+
     ```
     import { defineConfig } from 'vitest/config';
     ...
     export default defineCongi({
-    ...
-    test: {
-    globals: true,
-    environment: "jsdom",
-    setupFiles: "./src/test/setup.ts",
-    css: true,
-    }
+    ... 
+        test: {
+        globals: true,
+        environment: "jsdom",
+        setupFiles: "./src/tests/setup.ts",
+        css: true,
+        }
     })
     ```
 
