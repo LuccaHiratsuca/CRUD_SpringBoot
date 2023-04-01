@@ -6,8 +6,10 @@ import matchers from '@testing-library/jest-dom'
 
 expect.extend(matchers)
 
-// import the component to be tested
-it("Test Login", () => {
-    render(<Login />);
-    expect(screen.getByText("Login")).toBeInTheDocument();
+describe("Login", () => {
+    // import the component to be tested
+    it("Test Login", () => {
+        render(<Login />);
+        expect(screen.getByText("Login")).toBeInTheDocument();
+    });
 });
