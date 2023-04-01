@@ -1,4 +1,17 @@
+import apiBackend from "../../services/api-backend";
+import {useQuery} from "react-query";
+
 const Table = () => {
+    const {data, isLoading, error} = useQuery('products', async () => {
+        const {data} = await apiBackend.getProducts();
+        return data;
+    });
+
+    if (isLoading) {
+        return <div>Loading...</div>
+    }
+    console.log(data);
+
     return(
         <table className="table">
             <thead>
