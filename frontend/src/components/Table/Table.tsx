@@ -1,17 +1,7 @@
 import apiBackend from "../../services/api-backend";
-import {useQuery} from "react-query";
+import IApiBack from "../../types/interfaceApiBack";
 
-const Table = () => {
-    const {data, isLoading, error} = useQuery('products', async () => {
-        const {data} = await apiBackend.getProducts();
-        return data;
-    });
-
-    if (isLoading) {
-        return <div>Loading...</div>
-    }
-    console.log(data);
-
+const Table = ({dataProducts}: {dataProducts: IApiBack[]}) => {
     return(
         <table className="table">
             <thead>
@@ -24,16 +14,23 @@ const Table = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                {
+                    dataProducts.map((product, index) => {
+                        return(
+                            <tr key={index}>
+                                <td>{index +1}</td>
+                                <td>{product.id}</td>
+                                <td>{product.name}</td>
+                                <td>{product.description}</td>
+                                <td>
+                                    <button className="btn btn-primary">Edit</button>
+                                    <button className="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                        )
+                    })
+                }
             </tbody>
         </table>
-
     )
 }
-
-export default Table;
