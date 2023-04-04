@@ -7,7 +7,7 @@ import apiBackend from "../../services/api-backend";
 const Products = () => {
     const[btnRegister, setBtnRegister] = useState(false);
 
-    const {data, isLoading, error} = useQuery('products', async () => {apiBackend.getProducts()});
+    const {data, isLoading, error} = useQuery("/products", apiBackend.getProducts);
     if ((isLoading) || (data === undefined)) {
         return <div>Loading...</div>
     }
