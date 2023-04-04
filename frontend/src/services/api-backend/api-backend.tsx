@@ -1,7 +1,7 @@
 import IApiBack from "../../types/interfaceApiBack";
 import http from "../../utils/http-common";
 
-const getProducts = async (): Promise<IApiBack> => {
+const getProducts = async (): Promise<IApiBack[]> => {
     const { data } = await http.get("/products");
     return data;
 }
