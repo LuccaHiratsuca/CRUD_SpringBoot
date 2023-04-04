@@ -1,11 +1,15 @@
 import Login from './pages/Login'
 import Products from './pages/Products'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 function App() {
+  
+  const queryClient = new QueryClient()
+
   return (
-    <div>
+    <QueryClientProvider client={queryClient}>
       <Products />
-    </div>
+    </QueryClientProvider>
   )
 }
 

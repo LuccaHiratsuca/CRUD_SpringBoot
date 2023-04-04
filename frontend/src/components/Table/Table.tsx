@@ -34,3 +34,5 @@ const Table = ({dataProducts}: {dataProducts: IApiBack[]}) => {
         </table>
     )
 }
+
+export default Table
