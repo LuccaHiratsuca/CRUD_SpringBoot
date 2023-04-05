@@ -16,10 +16,18 @@ const deleteProduct = async (id: number): Promise<IApiBack> => {
     return data;
 }
 
-const postProduct = async (name: string, description: string): Promise<IApiBack> => {
-    const { data } = await http.post("/newProduct", { name, description });
+
+// object of interface IApiBack
+const postProduct = async (name: string, description: string): Promise<IApiBack[]> => {
+
+    const { data } = await http.post("/newProduct", {name, description});
     return data;
 }
+
+
+
+
+
 
 export default {getProducts, updateProduct, deleteProduct, postProduct}
 
