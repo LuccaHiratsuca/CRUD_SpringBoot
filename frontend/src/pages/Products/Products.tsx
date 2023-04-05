@@ -5,20 +5,18 @@ import { useQuery } from "react-query";
 import apiBackend from "../../services/api-backend";
 
 const Products = () => {
-    const[btnRegister, setBtnRegister] = useState(false);
+    const[btnRegister, setBtnRegister] = useState(true);
 
     const {data, isLoading, error} = useQuery("/products", apiBackend.getProducts);
     if ((isLoading) || (data === undefined)) {
         return <div>Loading...</div>
     }
-    console.log(data);
 
     return (
         <div>
             <Form register={btnRegister}/>
             <Table dataProducts={data}/>
         </div>
-
     )
 }
 
