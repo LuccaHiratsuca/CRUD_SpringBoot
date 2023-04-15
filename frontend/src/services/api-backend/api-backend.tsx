@@ -24,6 +24,7 @@ const deleteProduct = async (id: number): Promise<IApiBack> => {
         console.log(response.data[1].message);
         return response.data;
     } catch (error: any) {
+
         console.log(error.response.status)
         console.log(error.response.data.message);
     }
@@ -34,9 +35,11 @@ const postProduct = async (name: string, description: string): Promise<IApiBack>
     try {
         const response = await http.post(`/newProduct`, { name, description });
         console.log(response.data[1].message); 
+        
         return response.data;
     }
     catch (error: any) {
+        alert(error.response.status + " - " + error.response.data.message);
         console.log(error.response.status)
         console.log(error.response.data.message);
     }
