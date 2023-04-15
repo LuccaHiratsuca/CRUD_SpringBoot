@@ -1,6 +1,6 @@
 import styles from "./Form.module.css"
 import { useContext,useState } from "react";
-import UserContext from "../../store/contextUser";
+import UserContext from "../../context/contextUser";
 import apiBackend from "../../services/api-backend/api-backend";
 interface IForm{
     register: boolean;
@@ -16,7 +16,6 @@ const Form = ({register}: IForm) => {
     const registerProduct = () => {
         apiBackend.postProduct(objProduct.name, objProduct.description);
     }
-
 
     return(
         <>

@@ -8,6 +8,8 @@ Projeto desenvolvido com backend em Java SpringBoot e frontend em React Ts
 
 `components`: Componentes reutilizáveis da aplicação. Componentes que são unidades para sua aplicação, um button, um modal, etc.
 
+`context`: Onde serão mantidos todos os contextos da aplicação
+
 `pages`: As pages que usam vários componentes. É essa a página que o usuário vai ver.
 
 `hooks`: Essa pasta é utilizada para armazenar hooks que são genéricos, tem interação com hooks do React (useState, useEffet) e normalmente são reutilizáveis em qualquer projeto, exemplos: useScreenSize, useLocalStorage, useSessionStorage, useUserActive.
