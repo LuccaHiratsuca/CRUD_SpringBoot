@@ -88,4 +88,11 @@ Para realizar testes foi utilizado o [vitest](!https://vitest.dev/)
         }
     })
     ```
+### Redux
+
+Para o controle de states da aplicação foi utilizado o Redux, para adicioná-lo no projeto:
+
+```
+    yarn add @reduxjs/toolkit react-redux
+```
 
