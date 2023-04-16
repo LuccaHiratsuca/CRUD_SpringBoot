@@ -1,13 +1,13 @@
 import styles from "./Form.module.css"
 import { useContext,useState } from "react";
-import contextUser from "../../context/contextUser";
+import contextProduct from "../../context/contextProduct";
 import apiBackend from "../../services/api-backend/api-backend";
 interface IForm{
     register: boolean;
 }
 
 const Form = ({register}: IForm) => {
-    const [objProduct, setObjProduct] = useState(useContext(contextUser));
+    const [objProduct, setObjProduct] = useState(useContext(contextProduct));
 
     const typing = (e: any) => {
         setObjProduct({...objProduct, [e.target.name]: e.target.value});
