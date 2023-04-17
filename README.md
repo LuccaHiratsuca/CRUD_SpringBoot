@@ -96,3 +96,6 @@ Para o controle de states da aplicação foi utilizado o Redux, para adicioná-l
     yarn add @reduxjs/toolkit react-redux
 ```
 
+### Extras:
+
+- [Extensão do React DevTools](https://github.com/zalmoxisus/redux-devtools-extension)

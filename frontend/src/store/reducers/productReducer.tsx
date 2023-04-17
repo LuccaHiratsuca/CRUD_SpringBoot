@@ -1,7 +1,7 @@
 // import actionTypes from '../contants/actionTypes';
 import { actionTypes } from '../contants/actionTypes';
 import { useContext, useReducer } from 'react';
-import contextProduct from '../../context/contextProduct';
+// import contextProduct from '../../context/contextProduct';
 
 interface IProductReducer {
     type: string
