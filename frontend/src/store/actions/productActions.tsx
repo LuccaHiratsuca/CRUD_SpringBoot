@@ -1,7 +1,7 @@
-import { actionTypes } from "../contants/actionTypes"
+import { actionTypes } from "../constants/actionTypes"
 import IApiBack from "../../types/interfaceApiBack"
 
-export const setProducts = (products:IApiBack) => {
+export const setProducts = (products:IApiBack[]) => {
     return {
         type: actionTypes.SET_PRODUCTS,
         payload: products,

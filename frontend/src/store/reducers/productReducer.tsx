@@ -1,5 +1,5 @@
 // import actionTypes from '../contants/actionTypes';
-import { actionTypes } from '../contants/actionTypes';
+import { actionTypes } from '../constants/actionTypes';
 import { useContext, useReducer } from 'react';
 // import contextProduct from '../../context/contextProduct';
 
@@ -13,19 +13,13 @@ interface IProductReducer {
 // const initialState = useContext(contextProduct); 
 
 const initialState = {
-    products: [
-        {
-            id: 1,
-            name: "Product 1",
-            description: "Description 1"
-        }
-    ]	
+    products: []	
 }
 
 export const productReducer = (state = initialState, { type, payload }: IProductReducer) => {
   switch (type) {
     case actionTypes.SET_PRODUCTS:
-      return state;
+      return { ...state, products: payload };
     default:
       return state;
   }
