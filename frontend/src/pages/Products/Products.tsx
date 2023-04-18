@@ -1,5 +1,6 @@
 import Table from "../../components/Table";
 import Form from "../../components/Form";
+import ProductList from "../../components/ProductsList/ProductsList";
 import { useState } from "react";
 import { useQuery } from "react-query";
 import apiBackend from "../../services/api-backend";
@@ -23,7 +24,8 @@ const Products = () => {
     return (
         <div>
             <Form register={btnRegister}/>
-            <Table />
+            {/* <Table /> */}
+            <ProductList />
         </div>
     )
 }
