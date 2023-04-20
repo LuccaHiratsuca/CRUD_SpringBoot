@@ -30,6 +30,12 @@ public class ProductController {
     public Iterable<ProductModel> products() {
         return productService.listProducts();
     }
+
+    // Route to list a specific product
+    @GetMapping("/product/{id}")
+    public ResponseEntity<?> product(@PathVariable Long id) {
+        return productService.specificProduct(id);
+    }
     
     // Route to create a product
     @PostMapping("/newProduct")
