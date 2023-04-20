@@ -99,3 +99,4 @@ Para o controle de states da aplicação foi utilizado o Redux, para adicioná-l
 ### Extras:
 
 - [Extensão do React DevTools](https://github.com/zalmoxisus/redux-devtools-extension)
+- [Ideias para melhorar o projeto](https://nmgtechnologies.com/blog/must-have-pages-on-your-ecommerce-site.html)

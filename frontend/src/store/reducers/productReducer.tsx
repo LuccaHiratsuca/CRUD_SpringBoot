@@ -13,7 +13,7 @@ interface IProductReducer {
 // const initialState = useContext(contextProduct); 
 
 const initialState = {
-    products: []	
+    products: [],
 }
 
 export const productReducer = (state = initialState, { type, payload }: IProductReducer) => {
@@ -23,4 +23,14 @@ export const productReducer = (state = initialState, { type, payload }: IProduct
     default:
       return state;
   }
-};  
+};
+
+
+export const selectedProductReducer = (state = {}, { type, payload }: IProductReducer) => {
+  switch (type) {
+    case actionTypes.SELECTED_PRODUCT:
+      return { ...state, ...payload };
+    default:
+      return state;
+  }
+}

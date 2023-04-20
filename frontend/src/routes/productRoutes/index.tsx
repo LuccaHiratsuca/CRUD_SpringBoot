@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Products from "../../pages/Products"
-import ProductDetails from '../../pages/ProductDetails/ProductDetails';
+import ProductDetails from '../../pages/Product_Page/Product_Page';
 
 
 export const ProductRoutes = () => {
