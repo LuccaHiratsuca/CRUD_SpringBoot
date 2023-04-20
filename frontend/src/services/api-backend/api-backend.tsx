@@ -6,6 +6,18 @@ const getProducts = async (): Promise<IApiBack[]> => {
     return data;
 }
 
+const getProductbyId = async (id: number): Promise<IApiBack> => {
+    try{
+        const response = await http.get(`/product/${id}`);
+        // console.log(response);
+        return response.data;
+    } catch (error: any) {
+        // console.log(error) 
+        // console.log(error.response.data.message);
+    }
+    throw new Error("Error in getting a specific product");
+}
+
 const updateProduct = async (id: number, name: string, description: string): Promise<IApiBack> => {
     try{
         const response = await http.put(`/updateProduct/${id}`, { name, description });
@@ -47,7 +59,7 @@ const postProduct = async (name: string, description: string): Promise<IApiBack>
 }
 
 
-export default {getProducts, updateProduct, deleteProduct, postProduct}
+export default {getProducts, getProductbyId, updateProduct, deleteProduct, postProduct};
 
 
 
