@@ -22,6 +22,16 @@ public class ProductService {
         return productRepository.findAll();
     }
 
+    // Specigic product
+    public ResponseEntity<?> specificProduct(Long id){
+        if (productRepository.findById(id).isPresent()){
+            return ResponseEntity.status(HttpStatus.OK).body(productRepository.findById(id));
+        } else {
+            feedbackProduct.setMessage("Product not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(feedbackProduct);
+        }
+    }
+
     // Create a product or update a product
     public ResponseEntity<?> createUpdate(ProductModel product){
         if (product.getName().equals("")){
