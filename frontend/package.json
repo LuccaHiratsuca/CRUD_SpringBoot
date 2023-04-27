@@ -20,6 +20,9 @@
     "react-router-dom": "^6.10.0"
   },
   "devDependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.12.2",
     "@jest/globals": "^29.5.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
