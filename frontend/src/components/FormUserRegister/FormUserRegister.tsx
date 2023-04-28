@@ -2,7 +2,7 @@
 import { Input } from "@mui/material";
 import { Button } from "@mui/material";
 import styles from "./FormUserRegister.module.css";
-
+import { useForm } from "react-hook-form";
 
 const FormUserRegister = () => {
 
