@@ -1,13 +1,14 @@
-import styles from "./Form.module.css"
+import styles from "./FormProduct.module.css"
 import { useContext,useState } from "react";
 import contextProduct from "../../context/contextProduct";
 import apiBackend from "../../services/api-backend/api-backend";
+import { Button } from "@mui/material";
 
 interface IForm{
     register: boolean;
 }
 
-const Form = ({register}: IForm) => {
+const FormProduct = ({register}: IForm) => {
     const defaultProduct = useContext(contextProduct);
     const [objProduct, setObjProduct] = useState(useContext(contextProduct));
 
@@ -35,7 +36,9 @@ const Form = ({register}: IForm) => {
                 {
                     register 
                     ?
-                        <input type="button" value="Register" className="btn btn-primary" onClick={registerProduct}/>
+                    <Button className={`${styles.button} ${styles['button-container']}`} variant="contained" color="primary" onClick={registerProduct}>Register</Button>
+
+
                     :
                     <div className={styles.btns}>
                         <input type="button" value="Update" className="btn btn-warning" />
@@ -48,4 +51,4 @@ const Form = ({register}: IForm) => {
         );
 }
 
-export default Form;
+export default FormProduct;
