@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import apiBackend from "../../services/api-backend/api-backend";
 import { selectedProduct } from "../../store/actions/productActions";
 
-
 const ProductDetails = () => {
     const product = useSelector((state: any) => state.product);
     const { id } = useParams();
